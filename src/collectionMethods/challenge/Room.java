@@ -1,5 +1,7 @@
 package collectionMethods.challenge;
 
+import java.util.Objects;
+
 public class Room {
   private String name;
   private String type;
@@ -43,5 +45,18 @@ public class Room {
 
   public void setRate(double rate) {
     this.rate = rate;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (!(o instanceof Room)) return false;
+    Room room = (Room) o;
+    return getName().equals(room.getName()) && getType().equals(room.getType());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getName(), getType());
   }
 }
