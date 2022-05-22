@@ -37,7 +37,7 @@ class CarComparisonTests {
   @Test
   public void removeTest() {
     this.cars.remove(mercedes);
-    this.cars.remove(new Car("Mercedes", "C200", 80000));
+    this.cars.remove(new Car("Mazda", "Atenza", 104000));
 
     assertEquals(1, this.cars.size());
   }
