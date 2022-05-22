@@ -1,5 +1,4 @@
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 public class Application {
   public static void main(String[] args) {
@@ -8,6 +7,19 @@ public class Application {
     Room london = new Room("London", "Premier Suite", 2, 10000.5);
     Collection<Room> rooms = List.of(cambridge, manchester, london);
 
+    //A good practice is to use the most abstract type possible.
+    // This allows you to switch the implementation without any consequences
+    Collection<String> favouriteThingsArray = new ArrayList<>();
+    favouriteThingsArray.add("Books");
+    favouriteThingsArray.add("Bikes");
+    favouriteThingsArray.add("Code");
+    favouriteThingsArray.add("Books");
+
+    Collection<String> favouriteThingsSet = new HashSet<>(favouriteThingsArray);
+
+
+    System.out.println(favouriteThingsArray);
+    System.out.println(favouriteThingsSet);
     System.out.println(getPotentialRevenue(rooms));
 
   }
