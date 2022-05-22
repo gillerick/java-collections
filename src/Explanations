@@ -1,0 +1,10 @@
+ Collections vs Arrays
+ The disadvantages of an array. Let's walk through some examples and I'll show you. Arrays have a fixed size because
+ the space for an array must be allocated for the number of objects that we intend to store. So if I want to declare
+ a new room array, I need to know the number of elements that I'll be storing up front. Then I need to store each room
+  within its index in the array. This can lead to one-off errors that throw index out of bounds exceptions.
+  And if you look closely, you'll notice that we already have one. I wanted to declare an array of size three,
+  but instead, I've declared an array of size two. That would have threw an error. Now, when we work with collections,
+   we don't have these sorts of problems. It's relatively easy to instantiate a collection and add elements into it.
+   You'll notice that I do not have to declare the size of the collection upfront. And if I want to add elements into
+   the collection, I don't have to be concerned about a couple of things.
