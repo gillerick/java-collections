@@ -1,0 +1,10 @@
+In Java, there are two main ways to compare objects. One is identity-based and the other is value-based.
+When comparing objects by identity, we check to see if two objects have references to the same object in memory.
+When you use Java's equality operator, this is the type of check that occurs. Comparing objects by value is a test of
+whether two objects are logically equivalent. It relies upon their field values, instead of their memory addresses to
+perform this comparison. In Java, we override the equals method on an object to establish the logic for this comparison.
+A quick way to learn these two concepts is to think about two people who have the same car. Now, that's just how we phrase it.
+They really don't have the same car, but they have two cars with the same make and model.
+That is a comparison based on characteristics, or values of the car and it's the type of comparison necessary for
+collection methods, like remove, to function properly. On the other hand, if we referred to two people sharing a single
+car, that is an identity based comparison.
