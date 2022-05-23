@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.stream.Collectors;
 
 
 public class RoomService {
@@ -37,14 +38,39 @@ public class RoomService {
     this.inventory.remove(room);
   }
 
-  public boolean hasRoom(Room room){
+  public boolean hasRoom(Room room) {
     return this.inventory.contains(room);
   }
 
   //A lambda is a function that only specifies a parameter and a body (with an arrow token between parameter & body)
-  public Collection<Room> getByType(String type){
+  public Collection<Room> getByType(String type) {
     Collection<Room> copy = new HashSet<>(this.inventory);
     copy.removeIf(room -> !room.getType().equals(type));
     return copy;
+  }
+
+  public void applyDiscount(final double discount) {
+    //Reduces the rate of each room by the provided discount
+    this.inventory.forEach(r -> r.setRate(r.getRate() * (1 - discount)));
+  }
+
+  public Collection<Room> getRoomsByCapacity(final int requiredCapacity) {
+    //Return a new collection of rooms that meet or exceed the provided capacity
+    Collection<Room> matches = new HashSet<>(this.inventory);
+    for (Room room : inventory) {
+      if (room.getCapacity() >= requiredCapacity) {
+        matches.add(room);
+      }
+    }
+    return matches;
+  }
+
+  public Collection<Room> getRoomByRateAndType(final double rate, final String type) {
+    //Returns a new collection of rooms with rate below the provided rate and that match the provided type
+    return this.inventory.stream()
+        .filter(r -> r.getRate() < rate)
+        .filter(r -> r.getType().equals(type))
+        .collect(Collectors.toList());
+
   }
 }
