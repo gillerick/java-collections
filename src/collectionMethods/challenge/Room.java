@@ -8,11 +8,30 @@ public class Room {
   private int capacity;
   private double rate;
 
+  private boolean isPetFriendly;
+
   public Room(String name, String type, int capacity, double rate) {
     this.name = name;
     this.type = type;
     this.capacity = capacity;
     this.rate = rate;
+    this.isPetFriendly = false;
+  }
+
+  public Room(String name, String type, int capacity, double rate, boolean isPetFriendly) {
+    this.name = name;
+    this.type = type;
+    this.capacity = capacity;
+    this.rate = rate;
+    this.isPetFriendly = isPetFriendly;
+  }
+
+  public boolean isPetFriendly() {
+    return isPetFriendly;
+  }
+
+  public void setPetFriendly(boolean petFriendly) {
+    isPetFriendly = petFriendly;
   }
 
   public String getName() {
