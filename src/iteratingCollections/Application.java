@@ -23,5 +23,16 @@ public class Application {
     System.out.println(iterator.next().getName()); //Manchester
     System.out.println(iterator.next().getName()); //Piccadilly
     System.out.println(iterator.next().getName()); //Oxford
+
+    //The above example is typically done as shown below
+    while(iterator.hasNext()){
+      Room room = iterator.next();
+      System.out.println(room.getName());
+    }
+
+    //Using for loop
+    for (Room room: rooms){
+      System.out.println(room.getName());
+    }
   }
 }
