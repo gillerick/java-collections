@@ -41,7 +41,7 @@ public class RoomService {
     return this.inventory.contains(room);
   }
 
-  //A lambda is a function that only specifies a parameter and a bady (with an arrow token between parameter & body)
+  //A lambda is a function that only specifies a parameter and a body (with an arrow token between parameter & body)
   public Collection<Room> getByType(String type){
     Collection<Room> copy = new HashSet<>(this.inventory);
     copy.removeIf(room -> !room.getType().equals(type));
