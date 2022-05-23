@@ -18,9 +18,7 @@ public class Streams {
     Collection<Room> rooms = new ArrayList<>(Arrays.asList(manchester, oxford, piccadilly));
 
     rooms.stream()
-        .filter(room -> {
-          System.out.format("Testing %s with result %b%n", room.getName(), room.isPetFriendly());
-          return room.isPetFriendly();
-        }).forEach(room -> System.out.println(room.getName()));
+        .filter(room -> room.isPetFriendly())
+        .forEach(room -> System.out.println(room.getName()));
   }
 }
